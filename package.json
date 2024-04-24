@@ -1,0 +1,13 @@
+{
+  "name": "npm-kill-signals-bug",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Example app to show npm cli bug #6684",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "keywords": [],
+  "author": "Ryan Wheale <ryan.wheale@gmail.com>",
+  "license": "ISC"
+}

@@ -1,0 +1,89 @@
+x-shared-config: &shared-config
+  working_dir: /usr/local/app
+  volumes:
+    - ./:/usr/local/app
+
+x-commands:
+  node: &cmd-node ['node', './src/index.js']
+  npm: &cmd-npm ['npm', 'start']
+  npx: &cmd-npx ['npx', -y', 'tsx', './src/index.js']
+
+services:
+  node-18.18-alpine_node:
+    <<: *shared-config
+    image: node:18.18-alpine
+    command: *cmd-node
+
+  # Failing
+  node-18.18-alpine_npm:
+    <<: *shared-config
+    image: node:18.18-alpine
+    command: *cmd-npm
+
+  # Failing
+  node-18.18-alpine_npx:
+    <<: *shared-config
+    image: node:18.18-alpine
+    command: *cmd-npx
+
+  node-18.19-alpine_node:
+    <<: *shared-config
+    image: node:18.19-alpine
+    command: *cmd-node
+
+  # Failing
+  node-18.19-alpine_npm:
+    <<: *shared-config
+    image: node:18.19-alpine
+    command: *cmd-npm
+
+  # Failing
+  node-18.19-alpine_npx:
+    <<: *shared-config
+    image: node:18.19-alpine
+    command: *cmd-npx
+
+  node-18.20.0-alpine_node:
+    <<: *shared-config
+    image: node:18.20.0-alpine
+    command: *cmd-node
+
+  node-18.20.0-alpine_npm:
+    <<: *shared-config
+    image: node:18.20.0-alpine
+    command: *cmd-npm
+
+  node-18.20.0-alpine_npx:
+    <<: *shared-config
+    image: node:18.20.0-alpine
+    command: *cmd-npx
+
+  node-20-alpine_node:
+    <<: *shared-config
+    image: node:20-alpine
+    command: *cmd-node
+
+  node-20-alpine_npm:
+    <<: *shared-config
+    image: node:20-alpine
+    command: *cmd-npm
+
+  node-20-alpine_npx:
+    <<: *shared-config
+    image: node:20-alpine
+    command: *cmd-npx
+
+  node-21-alpine_node:
+    <<: *shared-config
+    image: node:21-alpine
+    command: *cmd-node
+
+  node-21-alpine_npm:
+    <<: *shared-config
+    image: node:21-alpine
+    command: *cmd-npm
+
+  node-21-alpine_npx:
+    <<: *shared-config
+    image: node:21-alpine
+    command: *cmd-npx
